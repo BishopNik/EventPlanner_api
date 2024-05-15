@@ -50,6 +50,10 @@ export const memberAddSchema = Joi.object({
 	event: Joi.string().required().messages({
 		message: 'Missing required event field',
 	}),
+	registrationDate: {
+		type: Date,
+		default: Date.now,
+	},
 });
 
 export const Members = model('member', memberSchema);

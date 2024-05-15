@@ -10,7 +10,7 @@ export const add = async (req, res, _) => {
 		throw httpError(404, `Member register in event`);
 	}
 
-	const result = await Members.create({ ...req.body });
+	const result = await Members.create({ ...req.body, registrationDate: new Date() });
 
 	res.status(201).json(result);
 };

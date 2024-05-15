@@ -8,8 +8,8 @@ import dotenv from 'dotenv';
 import registerRouter from './routes/api/register.js';
 import eventRouter from './routes/api/event.js';
 
-// import swaggerUi from 'swagger-ui-express';
-// import swaggerDocument from './swagger.json' with { type: "json" };
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger.json' assert { type: 'json' };
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 
 // Api-docs
-// app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Register member
 app.use('/api/register', registerRouter);

@@ -4,8 +4,8 @@ import { Members } from '../models/index.js';
 import { httpError } from '../utils/index.js';
 
 export const add = async (req, res, _) => {
-	const { dateBth, name, email } = req.body;
-	const res_member = await Members.find({ dateBth, name, email });
+	const { event, dateBth, name, email } = req.body;
+	const res_member = await Members.find({ event, dateBth, name, email });
 	if (res_member.length) {
 		throw httpError(404, `Member register in event`);
 	}

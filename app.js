@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.json());
 
 // Api-docs
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Register member
 app.use('/api/register', registerRouter);

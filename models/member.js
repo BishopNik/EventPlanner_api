@@ -27,7 +27,7 @@ const memberSchema = new Schema(
 			required: [true, 'Set event for member'],
 		},
 	},
-	{ versionKey: false }
+	{ versionKey: false, timestamps: true }
 );
 
 memberSchema.post('save', handleMongooseError);
@@ -50,10 +50,6 @@ export const memberAddSchema = Joi.object({
 	event: Joi.string().required().messages({
 		message: 'Missing required event field',
 	}),
-	registrationDate: {
-		type: Date,
-		default: Date.now,
-	},
 });
 
 export const Members = model('member', memberSchema);

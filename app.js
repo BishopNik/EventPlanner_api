@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 
 import registerRouter from './routes/api/register.js';
 import eventRouter from './routes/api/event.js';
+import eventsRouter from './routes/api/events.js';
 
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json' with { type: 'json' };
@@ -29,6 +30,9 @@ app.use('/api/register', registerRouter);
 
 // Event members
 app.use('/api/event', eventRouter);
+
+// Get Events
+app.use('/api/events', eventsRouter);
 
 app.use((_req, res) => {
 	res.status(404).json({ message: 'Not found' });

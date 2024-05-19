@@ -8,7 +8,9 @@ export const getEvents = async (req, res) => {
 	const urlObj = new URL(fullUrl);
 	const urlParams = queryString.parse(urlObj.search);
 	try {
-		const response = await axios.get('https://kudago.com/public-api/v1.4/events/', urlParams);
+		const response = await axios.get('https://kudago.com/public-api/v1.4/events/', {
+			params: urlParams,
+		});
 		res.json(response);
 	} catch (error) {
 		res.status(500).send('Error fetching data');

@@ -36,12 +36,5 @@
 	},
 	"engines": {
 		"node": ">=16.20.1"
-	},
-	"jest": {
-		"transform": {},
-		"testEnvironment": "node",
-		"setupFiles": [
-			"<rootDir>/jest.setup.js"
-		]
 	}
 }
